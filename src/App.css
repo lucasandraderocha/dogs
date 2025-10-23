@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css2?family=Instrument:wght@100;200;300;400;500;600;800&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  color: #333;
+  --type-first: "Inter Tight", Arial, sans-serif;
+  --type-second: "Instrument Serif", Georgia;
+  font-family: var(--type-first);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  color: #333;
+  z-index: 1;
+}
+
+.title:after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fb1;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.25rem;
+  z-index: -1;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+/* Chrome, Safari, Edge */
+
+::-webkit-scrollbar {
+  width: 0.5rem; /* Largura da barra */
+}
+::-webkit-scrollbar-track {
+  background: #777; /* Cor do trilho da barra */
+}
+::-webkit-scrollbar-thumb {
+  background: #eee6; /* Cor da parte móvel da barra */
+  border-radius: 0.125rem; /* Raio da borda da parte móvel da barra */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc5; /* Cor da parte móvel da barra no hover */
+}
+
+/* Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #fff0 !important;
+  }
+}
+
+.hoverLetter {
+  letter-spacing: inherit;
+  transition: letter-spacing 152ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.hoverLetter:hover {
+  letter-spacing: 1px;
+}

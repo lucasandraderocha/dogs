@@ -1,0 +1,48 @@
+.photoPost {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.photoPost #img {
+  margin-bottom: 1rem;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
+}
+
+.preview::after {
+  content: "";
+  display: block;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.preview div {
+  opacity: 0;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  background: #ddd1;
+  color: #eee;
+  font-family: var(--type-second);
+  text-transform: capitalize;
+
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5px);
+  transform: translateY(20px);
+  transition: 152ms cubic-bezier(0.2, 0, 1, 0.4);
+}
+
+.preview:hover div {
+  opacity: 1;
+  transform: initial;
+}

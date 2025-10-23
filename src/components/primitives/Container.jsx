@@ -1,0 +1,9 @@
+const Container = ({ children, ...props }) => {
+  return (
+    <section className="container" {...props}>
+      {children}
+    </section>
+  );
+};
+
+export default Container;

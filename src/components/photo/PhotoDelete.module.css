@@ -1,0 +1,17 @@
+.delete {
+  cursor: pointer;
+  letter-spacing: -0.4px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #fff;
+  background: #eee8;
+  color: #666;
+  border-radius: 0.5rem;
+  opacity: 0.4;
+  transition: opacity 352ms cubic-bezier(0.2, 0, 0, 1);
+}
+.delete:hover {
+  opacity: 1;
+  border: 1px solid #eee;
+  color: #333;
+  border-radius: 0.5rem;
+}
