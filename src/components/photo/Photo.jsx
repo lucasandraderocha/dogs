@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { GET_PHOTO } from "../../api";
 import Loading from "../helper/Loading";
 import Error from "../helper/Error";
+import PhotoContent from "./PhotoContent";
 
 const Photo = () => {
   const { id } = useParams();
@@ -13,16 +14,17 @@ const Photo = () => {
   useEffect(() => {
     const { url, options } = GET_PHOTO(id);
     request(url, options);
-    console.log(data);
   }, [id, request]);
 
   if (loading) return <Loading />;
   if (error) return <Error />;
-  return (
-    <div>
-      <img src={data.src} alt={`A foto postada por ${data.author}`} />
-    </div>
-  );
+  if (data)
+    return (
+      <div className="container ">
+        <PhotoContent data={data} type="single" />
+        {/* <img src={data.src} alt={`A foto postada por ${data.author}`} /> */}
+      </div>
+    );
 };
 
 export default Photo;

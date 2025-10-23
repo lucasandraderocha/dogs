@@ -9,12 +9,18 @@ import PhotoDelete from "./PhotoDelete";
 import styles from "./PhotoContent.module.css";
 import Image from "../helper/Image";
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, type }) => {
   const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <section className={styles.photo}>
+    <section
+      className={
+        type === "single"
+          ? `${styles.photo} ${styles.single}`
+          : `${styles.photo}`
+      }
+    >
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>

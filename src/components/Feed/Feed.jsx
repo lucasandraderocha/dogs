@@ -5,7 +5,7 @@ import UserContext from "../../UserContext";
 
 const Feed = ({ user }) => {
   const { modalPhoto } = useContext(UserContext);
-  const [pages, setPages] = useState([1]);
+  const [pages, setPages] = useState([1, 2]);
   const [infinite, setInfinite] = useState(true);
   useEffect(() => {
     let wait = false;
@@ -14,8 +14,8 @@ const Feed = ({ user }) => {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
-        if (scroll > height * 0.95 && !wait) {
-          setPages(pages => [...pages, pages.length + 1]);
+        if (scroll > height * 0.99 && !wait) {
+          setPages((pages) => [...pages, pages.length + 1]);
           wait = true;
           setTimeout(() => {
             wait = false;
@@ -36,7 +36,7 @@ const Feed = ({ user }) => {
   return (
     <>
       {modalPhoto && <FeedModal photo={modalPhoto} />}
-      {pages.map(page => (
+      {pages.map((page) => (
         <FeedPhoto
           key={page}
           page={page}

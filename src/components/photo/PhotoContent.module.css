@@ -12,6 +12,9 @@
   animation: scaleUp 232ms forwards;
 }
 
+.single.photo {
+  grid-template-columns: 1fr;
+}
 @keyframes scaleUp {
   to {
     opacity: initial;
