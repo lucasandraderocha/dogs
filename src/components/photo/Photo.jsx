@@ -20,7 +20,7 @@ const Photo = () => {
   if (error) return <Error />;
   if (data)
     return (
-      <div className="container ">
+      <div className="container">
         <PhotoContent data={data} type="single" />
         {/* <img src={data.src} alt={`A foto postada por ${data.author}`} /> */}
       </div>
