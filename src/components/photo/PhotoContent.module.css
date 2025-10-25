@@ -36,6 +36,9 @@
 }
 .single .info {
   grid-row: 2/4;
+  background: #8882;
+  padding: 1rem;
+  border-radius: 2rem;
 }
 .details {
   background: #fffb;

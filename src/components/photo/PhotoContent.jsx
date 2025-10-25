@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import UserContext from "../../UserContext";
 
@@ -12,7 +12,15 @@ import Image from "../helper/Image";
 const PhotoContent = ({ data, type }) => {
   const user = useContext(UserContext);
   const { photo, comments } = data;
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    let basePath = ["/picture", "/profile"];
+    let isBasePath = basePath.some((path) => pathname.startsWith(path));
+    if (isBasePath) {
+      return () => user.setModalPhoto(null);
+    }
+  }, [pathname, user]);
   return (
     <section
       className={
@@ -31,14 +39,14 @@ const PhotoContent = ({ data, type }) => {
               {user.data && user.data.username === photo.author ? (
                 <PhotoDelete id={photo.id} />
               ) : (
-                <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+                <Link to={`/profile/${photo.author}`}>@{photo.author}</Link>
               )}
             </p>
             <span className={styles.views}>{photo.acessos}</span>
           </section>
           <section className={styles.attributes}>
             <h1 className={`${styles.modalTitle} animeLeft hoverLetter`}>
-              <Link to={`/picture/${photo.id}`}>{photo.title}</Link>
+              {<Link to={`/picture/${photo.id}`}>{photo.title}</Link>}
             </h1>
             <ul>
               <li>{photo.peso}kg</li>
@@ -48,7 +56,7 @@ const PhotoContent = ({ data, type }) => {
             </ul>
           </section>
         </div>
-        <PhotoComments id={photo.id} comments={comments} />
+        <PhotoComments id={photo.id} comments={comments} type={type} />
       </div>
     </section>
   );
