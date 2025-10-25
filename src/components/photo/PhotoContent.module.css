@@ -11,9 +11,14 @@
   transform: scale(0.8) translateY(20px);
   animation: scaleUp 232ms forwards;
 }
-
+.single .img {
+  grid-row: 1;
+}
 .single.photo {
+  padding: 2rem;
   grid-template-columns: 1fr;
+  overflow: visible;
+  height: fit-content;
 }
 @keyframes scaleUp {
   to {
@@ -29,7 +34,12 @@
   grid-template-rows: 1fr 4fr;
   gap: 1rem;
 }
-
+.single .info {
+  grid-row: 2/4;
+  background: #8882;
+  padding: 1rem;
+  border-radius: 2rem;
+}
 .details {
   background: #fffb;
   border: 1px solid #fffd;
