@@ -50,6 +50,13 @@ input {
   transform: translateX(-20px);
   animation: animeLeft 0.3s forwards;
 }
+.animeBounce {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(0);
+  animation: animeBounce 352ms forwards cubic-bezier(0.7, 0.83, 0.165, 1);
+}
+
 .title {
   font-family: var(--type-second);
   line-height: 1;
@@ -76,6 +83,14 @@ input {
 @keyframes animeLeft {
   to {
     opacity: 1;
+    transform: initial;
+  }
+}
+
+@keyframes animeBounce {
+  to {
+    opacity: 1;
+    filter: none;
     transform: initial;
   }
 }

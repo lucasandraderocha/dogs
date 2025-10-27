@@ -8,29 +8,48 @@ const UserStatsGraphs = ({ data }) => {
     const graphData = data.map((item) => {
       return { x: item.title, y: Number(item.acessos) };
     });
-    const views = data
-      .map(({ acessos }) => Number(acessos))
-      .reduce((first, second) => first + second);
-    setTotal(views);
+
+    setTotal(
+      data
+        .map(({ acessos }) => Number(acessos))
+        .reduce((first, second) => first + second, 0)
+    );
     setGraph(graphData);
-    console.log(views);
   }, [data]);
   return (
     <>
       <section className={`${styles.graph} animeLeft`}>
-        <div className={`${styles.total} animeLeft`}>
+        <div className={`${styles.total} animeBounce`}>
           <p>Acessos:</p>
-          <span className="title">{total}</span>
+          <span>{total}</span>
         </div>
-        <div className="container">
+        <div className={`${styles.graphItem} animeBounce`}>
           <VictoryPie
             size={data.length}
             cornerRadius={({ datum }) => datum.y * 4}
-            innerRadius={48}
-            paddin={{ top: 24, bottom: 24, left: 24, right: 24 }}
+            innerRadius={56}
+            padding={32}
             data={graph}
             theme={VictoryTheme.clean}
+            style={{
+              data: {
+                fillopacity: 0.9,
+                stroke: "#FFF",
+                strokeWidth: 2,
+              },
+              labels: {
+                fontSize: 12,
+                fill: "#333",
+                fontFamily: "var(--type-first)",
+                fontWeight: 600,
+              },
+            }}
           />
+        </div>
+        <div className={`${styles.graphItem} animeBounce`}>
+          <VictoryChart>
+            <VictoryBar alignment="start" data={graph} />
+          </VictoryChart>
         </div>
       </section>
     </>
