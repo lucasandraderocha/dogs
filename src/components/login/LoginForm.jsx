@@ -11,6 +11,7 @@ import Button from "../form/Button";
 import Error from "../helper/Error";
 
 import styles from "./LoginForm.module.css";
+import Head from "../helper/Head";
 
 const LoginForm = () => {
   const username = useForm();
@@ -18,7 +19,7 @@ const LoginForm = () => {
 
   const { userLogin, error, loading } = useContext(UserContext);
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (username.validate() && password.validate()) {
@@ -28,6 +29,10 @@ const LoginForm = () => {
 
   return (
     <>
+      <Head
+        title="Login"
+        description="Faça o login e compartilhe as melhores fotos do seu melhor amigo no Dogs."
+      />
       <section className="animeLeft">
         <h1 className="title">Login</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -60,7 +65,7 @@ const LoginForm = () => {
           {error && <Error error={error} />}
         </form>
         <section>
-          <Link className={styles.resetPassword} to="/login/reset-password">
+          <Link className={styles.resetPassword} to="/login/lost">
             Recuperar Senha?
           </Link>
           <div className={styles.createAccount}>

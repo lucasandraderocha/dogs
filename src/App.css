@@ -112,3 +112,13 @@ input {
 .hoverLetter:hover {
   letter-spacing: 1px;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.AppBody {
+  flex: 1;
+}

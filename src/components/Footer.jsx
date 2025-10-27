@@ -1,12 +1,11 @@
+import Dogs from "../Assets/dogs-footer.svg?react";
 import styles from "./Footer.module.css";
-
 const Footer = () => {
   return (
-    <>
-      <div className={styles.header}>
-        <h1>Footer</h1>
-      </div>
-    </>
+    <footer className={styles.footer}>
+      <Dogs />
+      <p>Dogs. Alguns direitos reservados.</p>
+    </footer>
   );
 };
 

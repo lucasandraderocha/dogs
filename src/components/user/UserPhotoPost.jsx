@@ -11,6 +11,7 @@ import Input from "../../components/form/Input";
 import Label from "../../components/form/Label";
 import Button from "../../components/form/Button";
 import Error from "../../components/helper/Error";
+import Head from "../helper/Head";
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -23,7 +24,7 @@ const UserPhotoPost = () => {
   useEffect(() => {
     if (data) navigate("/account");
   }, [data, navigate]);
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("img", img.raw);
@@ -44,6 +45,10 @@ const UserPhotoPost = () => {
 
   return (
     <>
+      <Head
+        title="Postar uma Foto"
+        description={`Poste a sua foto favorito do seu cãozinho no Dogs.`}
+      />
       <section className={`${styles.photoPost} animeLeft`}>
         <form onSubmit={handleSubmit}>
           <Label>
