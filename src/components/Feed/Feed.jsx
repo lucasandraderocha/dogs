@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import FeedModal from "./FeedModal";
 import FeedPhoto from "./FeedPhoto";
 import UserContext from "../../UserContext";
-
+import PropTypes from "prop-types";
 const Feed = ({ user }) => {
   const { modalPhoto } = useContext(UserContext);
   const [pages, setPages] = useState([1, 2]);
@@ -47,4 +47,14 @@ const Feed = ({ user }) => {
   );
 };
 
+Feed.defaultProps = {
+  user: 0,
+};
+
+Feed.PropTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+};
 export default Feed;

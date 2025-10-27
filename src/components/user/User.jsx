@@ -5,11 +5,16 @@ import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 import { useContext } from "react";
 import UserContext from "../../UserContext";
+import Head from "../helper/Head";
 
 const User = () => {
   const { data } = useContext(UserContext);
   return (
     <>
+      <Head
+        title={`Perfil - @${data.nome}`}
+        description="Seu Perfil com todas as informações no Dogs."
+      />
       <section className="container">
         <UserHeader />
         <Routes>

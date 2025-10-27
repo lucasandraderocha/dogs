@@ -106,3 +106,41 @@ export const POST_COMMENT = (token, id, body) => {
     },
   };
 };
+
+export const LOST_PASSWORD = body => {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  }
+}
+
+export const RESET_PASSWORD = body => {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body)
+    },
+  }
+}
+
+export const STATS_GET = () => {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+      },
+    }
+  }
+}

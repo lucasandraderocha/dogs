@@ -17,23 +17,25 @@ import UserProfile from "../components/user/UserProfile";
 const Page = () => {
   const { modalPhoto } = useContext(UserContext);
   return (
-    <div className={`${styles.page} ${modalPhoto && styles.hasModal}`}>
+    <div className={`App ${styles.page} ${modalPhoto && styles.hasModal}`}>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="login/*" element={<Login />} />
-        <Route
-          path="account/*"
-          element={
-            <ProtectedRoute>
-              <User />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="picture/:id" element={<Photo />} />
-        <Route path="profile/:author" element={<UserProfile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main className="AppBody">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="login/*" element={<Login />} />
+          <Route
+            path="account/*"
+            element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="picture/:id" element={<Photo />} />
+          <Route path="profile/:user" element={<UserProfile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
       {modalPhoto && (
         <style>

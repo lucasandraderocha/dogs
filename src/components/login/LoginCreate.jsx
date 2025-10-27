@@ -10,6 +10,7 @@ import Error from "../helper/Error";
 
 import styles from "./LoginForm.module.css";
 import { Link } from "react-router-dom";
+import Head from "../helper/Head";
 
 const LoginCreate = () => {
   const username = useForm();
@@ -18,7 +19,7 @@ const LoginCreate = () => {
 
   const { loading, error, request } = useFetch();
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { url, options } = POST_USER({
@@ -36,6 +37,10 @@ const LoginCreate = () => {
 
   return (
     <>
+      <Head
+        title="Cadastre-se"
+        description="Cadastre-se e compartilhe as melhores fotos do seu melhor amigo no Dogs."
+      />
       <section>
         <div className="animeLeft">
           <h1 className="title">Cadastre-se</h1>

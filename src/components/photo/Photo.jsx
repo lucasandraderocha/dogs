@@ -5,6 +5,7 @@ import { GET_PHOTO } from "../../api";
 import Loading from "../helper/Loading";
 import Error from "../helper/Error";
 import PhotoContent from "./PhotoContent";
+import Head from "../helper/Head";
 
 const Photo = () => {
   const { id } = useParams();
@@ -20,10 +21,15 @@ const Photo = () => {
   if (error) return <Error />;
   if (data)
     return (
-      <div className="container">
-        <PhotoContent data={data} type="single" />
-        {/* <img src={data.src} alt={`A foto postada por ${data.author}`} /> */}
-      </div>
+      <>
+        <Head
+          title={data.photo.title}
+          description="Encontre e Compartilhe as melhores fotos do seu melhor amigo no Dogs."
+        />
+        <div className="container">
+          <PhotoContent data={data} type="single" />
+        </div>
+      </>
     );
 };
 

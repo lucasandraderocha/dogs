@@ -13,7 +13,7 @@ const FeedPhoto = ({ user, page, setInfinite }) => {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const total = 3;
+      const total = 6;
       const { url, options } = GET_PHOTOS({ page, total, user });
 
       const { res, json } = await request(url, options);
@@ -28,7 +28,7 @@ const FeedPhoto = ({ user, page, setInfinite }) => {
     return (
       <>
         <ul className={`${styles.feed}`}>
-          {data.map(photo => (
+          {data.map((photo) => (
             <FeedPhotoItems key={photo.id} photo={photo} />
           ))}
         </ul>
