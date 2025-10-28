@@ -1,13 +1,15 @@
 .error {
   color: #f34;
   font-size: 0.725rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   font-weight: 600;
   letter-spacing: 0.045rem;
   background: #ffd5d2;
   width: fit-content;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  box-shadow: 0 0 0 3px #ff8892, 0 0 0 4px #f34;
+  box-shadow: 0 0 1px 3px #f345;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
