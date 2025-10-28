@@ -62,7 +62,11 @@ const LoginForm = () => {
             <Button>Entrar</Button>
           )}
 
-          {error && <Error error={error} />}
+          {error && (
+            <Error
+              error={error && "Dados incorretos. Por favor, tente novamente."}
+            />
+          )}
         </form>
         <section>
           <Link className={styles.resetPassword} to="/login/lost">

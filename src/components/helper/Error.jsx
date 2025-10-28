@@ -5,7 +5,7 @@ const Error = ({ error, ...props }) => {
 
   return (
     <>
-      <p className={styles.error} {...props}>
+      <p className={`animeLeft ${styles.error}`} {...props}>
         {error}
       </p>
     </>
