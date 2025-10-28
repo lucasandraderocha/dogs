@@ -16,6 +16,7 @@ const UserStatsGraphs = ({ data }) => {
     );
     setGraph(graphData);
   }, [data]);
+
   return (
     <>
       <section className={`${styles.graph} animeLeft`}>
