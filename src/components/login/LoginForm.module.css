@@ -1,7 +1,19 @@
 .form {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-
+.containerDefaultLogin{
+  margin-bottom: 5rem;
+  display: flex;
+  gap:.5rem;
+}
+.defaultLogin {
+  width: fit-content;
+  padding: .5rem 1rem;
+  border: 2px solid #eee;
+  border-radius: .5rem;
+  color: #777;
+  font-weight: 600;
+}
 .resetPassword {
   display: inline-block;
   color: #666;

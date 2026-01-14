@@ -37,7 +37,7 @@ const LoginForm = () => {
         <h1 className="title">Login</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Label>
-            <p>Username</p>
+            <p>Nome de Usuário</p>
             <Input
               type="text"
               value={username.value}
@@ -47,7 +47,7 @@ const LoginForm = () => {
             />
           </Label>
           <Label>
-            <p>Password</p>
+            <p>Senha</p>
             <Input
               type="password"
               value={password.value}
@@ -68,6 +68,10 @@ const LoginForm = () => {
             />
           )}
         </form>
+        <section className={styles.containerDefaultLogin}>
+          <span className={styles.defaultLogin}>nome de usuário: dog</span>
+          <span className={styles.defaultLogin}>senha: dog</span>
+        </section>
         <section>
           <Link className={styles.resetPassword} to="/login/lost">
             Recuperar Senha?
