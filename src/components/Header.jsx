@@ -21,7 +21,6 @@ const Header = () => {
               <Link className={styles.login} to="/account">
                 {data.username}
               </Link>
-              <Button onClick={userLogout}>Logout</Button>
             </>
           ) : (
             <Link className={styles.login} to="/login">

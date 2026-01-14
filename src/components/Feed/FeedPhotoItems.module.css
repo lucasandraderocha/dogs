@@ -4,8 +4,7 @@
 }
 
 @media (max-width: 40rem) {
-  .photoItem:nth-child(2),
-  .photoItem:nth-child(4) {
+  .photoItem{
     grid-column: initial;
     grid-row: initial;
   }

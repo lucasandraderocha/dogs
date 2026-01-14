@@ -15,7 +15,7 @@ const PhotoContent = ({ data, type }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    let basePath = ["/picture", "/profile"];
+    let basePath = ["/picture", "/profile", "/"];
     let isBasePath = basePath.some((path) => pathname.startsWith(path));
     if (isBasePath) {
       return () => user.setModalPhoto(null);
